@@ -6,7 +6,7 @@ const newsApi = new Newsapi(process.env.NEWS_API_KEY)
 const { news: News } = require('../models/')
 
 async function start() {
-    cron.scheduleJob(`* */2 * * *`, async () => {
+    cron.scheduleJob(`0 */2 * * *`, async () => {
         try {
             console.log(`CA Cron ran at ${new Date().toTimeString()}`)
             var response = await newsApi.v2.topHeadlines({

@@ -1,0 +1,26 @@
+const path = require('path');
+//const version = require('./version')
+require('dotenv').config()
+
+/* if(!process.env.VERSION){
+    const fs = require('fs');
+    var directories = fs.readdirSync('.', {withFileTypes: true})
+    let max_version = 0
+    directories.forEach(directory => {
+        if(directory.name.match('v[0-9]*') && directory.isDirectory()){
+            if(Number(directory.name.substring(1)) && Number(directory.name.substring(1)) > max_version){
+                max_version = Number(directory.name.substring(1))
+            }
+        }
+    })
+
+    version = `v${max_version}`
+} */
+
+
+module.exports = {
+    'config': path.resolve(`config`, `config.js`),
+    'models-path': path.resolve(`models`),
+    'seeders-path': path.resolve(`seeders`),
+    'migrations-path': path.resolve(`migrations`)
+}
